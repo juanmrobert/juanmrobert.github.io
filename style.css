@@ -1,0 +1,105 @@
+﻿/************************************ RESET ************************************************/
+* {margin: 0; padding: 0; border: 0; outline: 0; list-style: none; text-decoration: none; box-sizing: border-box;}
+body {display: block; position: relative; width: 1200px; max-width: 90%; margin: 0 auto; overflow-x: hidden;}
+body {font-family: 'Nunito Sans', sans-serif; font-size: medium; background: #ffd723; color: #111;}
+img {max-width: 100%; height: auto;}
+a {color: #111}
+
+html, body{min-height: 100vh;}
+
+
+/************************************ FORMATO ************************************************/
+.fullwidth {padding-left: calc(50vw - 50%); padding-right: calc(50vw - 50%); margin-left: calc(-50vw + 50%); margin-right: calc(-50vw + 50%);}
+
+
+@keyframes animation_fadeIn{
+	0%   {transform: translateY(32px); opacity: 0;}
+    100% {transform: translateY(0); opacity: 1;}
+}
+
+.fadeIn{
+	animation: animation_fadeIn 0.5s ease;
+	opacity: 0;
+	animation-fill-mode: forwards; /* El css se queda en el último frame de la animación*/
+}
+
+@keyframes animation_fade{
+	0%   {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.fade{
+	animation: animation_fade 0.5s ease;
+	opacity: 0;
+	animation-fill-mode: forwards; /* El css se queda en el último frame de la animación*/
+}
+
+/* The animation code */
+@keyframes animation_fontsy {
+	0 {font-family:"Nunito Sans";}
+	14.285% {font-family: 'Permanent Marker', cursive;}
+	28.571% {font-family: 'Kumar One Outline', cursive;}
+	42.857% {font-family: 'Plaster', cursive;}
+	57.142% {font-family: 'Carter One', cursive;}
+	71.428% {font-family: 'Bungee', cursive;}
+	85.714% {font-family: 'Playfair Display', serif;}
+	100% {font-family:"Nunito Sans";}
+  }
+  
+  .fontsy {
+	animation: animation_fontsy 0.8s steps(7) infinite;
+	animation-fill-mode: forwards;
+	animation-delay: 0.2s;
+	transform: skewY(-5deg) translateX(-3px);
+	margin-bottom: 14px;
+  }
+
+
+  article{display: flex; flex-direction: column; justify-content: center; min-height: 50vh}
+  article > div {width:100%;}
+
+/****************************** HEADER ******************************/
+header {display: flex; align-content: center; justify-content: space-between; padding: 30px 0;}
+header > * {display: inline-block;}
+
+.logo {height: 50px; vertical-align: middle;}
+.logo:hover {opacity: .6;}
+
+
+* li {display: inline-block;}
+a {padding: 0 1em;}
+a:hover {opacity: .6;}
+
+
+
+
+/****************************** ARTICLE ******************************/
+h1 {font-size: 2.2rem; font-weight: 800; line-height: 1.2em; }
+h2 {font-size: 1rem; font-weight: 400; line-height: 1.2em; }
+h3 {font-size: 1rem; font-weight: bold; border-top: 3px solid; padding: .7em 0; margin: 0;}
+p {margin-bottom: 30px; line-height: 150%;}
+
+
+
+/****************************** FOOTER ******************************/
+footer {padding: 32px 0; text-align: left; position: absolute; bottom: 0; width: 100%; display: flex; justify-content: space-between;}
+
+.mob-hidden{display: initial}
+footer .mob-hidden{display: none}
+
+
+/****************************** MEDIA QUERIES ******************************/
+
+@media all and (max-width: 767px){
+	a {padding: 0;}
+	header {text-align: center;}
+	header nav{display: none}
+	header > div{width: 100%;}
+	h1{font-size: 1.8rem; padding-bottom: 16px;}
+	h2{font-size: 0.8rem}
+	footer{flex-direction: row-reverse; align-items: flex-end}
+	footer li{padding-bottom: 6px;}
+	footer ul li {padding-left: 1.5rem;}
+	footer ul li:last-child {display: none}
+	footer nav li, footer .mob-hidden{display: block}
+}
